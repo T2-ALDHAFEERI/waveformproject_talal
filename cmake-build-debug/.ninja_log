@@ -1,0 +1,5 @@
+# ninja log v5
+1	519	7978126647144612	CMakeFiles/talalpowerwave_project.dir/waveform.c.obj	ec07f27a80abf64
+34	526	7978126647144612	CMakeFiles/talalpowerwave_project.dir/io.c.obj	d61b0ee1926ed5c1
+71	623	7978126648306243	CMakeFiles/talalpowerwave_project.dir/main.c.obj	f54d22bf83efd948
+624	3142	7978126673073743	talalpowerwave_project.exe	a3fb45f7a6d89750
