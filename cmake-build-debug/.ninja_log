@@ -65,3 +65,9 @@
 12	848	7979847420119991	CMakeFiles/talalpowerwave_project.dir/io.c.obj	d61b0ee1926ed5c1
 65	853	7979847420119991	CMakeFiles/talalpowerwave_project.dir/main.c.obj	f54d22bf83efd948
 854	1520	7979847426653003	talalpowerwave_project.exe	a3fb45f7a6d89750
+7	948	7981644058625347	CMakeFiles/talalpowerwave_project.dir/waveform.c.obj	ec07f27a80abf64
+65	950	7981644058625347	CMakeFiles/talalpowerwave_project.dir/main.c.obj	f54d22bf83efd948
+120	951	7981644058625347	CMakeFiles/talalpowerwave_project.dir/io.c.obj	d61b0ee1926ed5c1
+951	1805	7981644067138386	talalpowerwave_project.exe	a3fb45f7a6d89750
+7	670	7981644784631492	CMakeFiles/talalpowerwave_project.dir/main.c.obj	f54d22bf83efd948
+671	1237	7981644790245222	talalpowerwave_project.exe	a3fb45f7a6d89750

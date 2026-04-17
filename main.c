@@ -4,21 +4,19 @@
 int main() {
     char * file_name = "power_quality_log.csv"; //pointer char to store file name
 
-    int rows=0; // we will count how many row ( except the header ) in this file
-    struct waveformsample *power_data = readData(file_name , &rows);
+    int rows_count=0; // we will count how many row ( except the header ) in this file
+    struct waveformsample *power_data = readData(file_name , &rows_count);
     if(power_data == NULL)
     {
         printf("error reading the data");
     }
-    else
-    {
 
-        printf("time %.4f \n" , power_data[0].time_stamp);
-        printf("phase a %.4f \n" , power_data[0].phase_A_voltage);
-        printf("phase b %.4f \n" , power_data[0].phase_B_voltage);
-        printf("number of read rows is %d \n" , rows);
+    double Rms_phaseA= getRmsA(power_data , rows_count);
+    double Rms_phaseB= getRmsB(power_data , rows_count);
+    double Rms_phaseC= getRmsC(power_data , rows_count);
+    printf("Rms for phase A is %lf \n Rms for phase B is %lf \n Rms for phase C is %lf \n" ,
+           Rms_phaseA , Rms_phaseB ,Rms_phaseC);
 
-    }
     return 0;
 
 

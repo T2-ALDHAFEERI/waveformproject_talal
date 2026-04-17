@@ -16,4 +16,9 @@ struct  waveformsample
     double the_percent;
 
 };
+
+double getRmsA ( struct waveformsample *power_data , int rows  );
+double getRmsB ( struct waveformsample *power_data , int rows  );
+double getRmsC ( struct waveformsample *power_data , int rows  );
+
 #endif //TALALPOWERWAVE_PROJECT_WAVEFORM_H
