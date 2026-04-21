@@ -21,4 +21,7 @@ double getRmsA ( struct waveformsample *power_data , int rows  );
 double getRmsB ( struct waveformsample *power_data , int rows  );
 double getRmsC ( struct waveformsample *power_data , int rows  );
 
+double getVPP_A( struct waveformsample *power_data , int rows  );
+double getVPP_B( struct waveformsample *power_data , int rows  );
+double getVPP_C( struct waveformsample *power_data , int rows  );
 #endif //TALALPOWERWAVE_PROJECT_WAVEFORM_H

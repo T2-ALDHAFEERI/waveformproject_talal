@@ -45,3 +45,48 @@ double getRmsC ( struct waveformsample *power_data , int rows  )
     rms=sqrt(meanValue);
     return rms;
 }
+double getVPP_A( struct waveformsample *power_data , int rows  ) {
+    double maximumVoltage = power_data->phase_A_voltage;
+    double minimumVoltage = power_data->phase_A_voltage;
+
+    for (int i = 1; i < rows; i++) {
+        double voltage = (power_data + i)->phase_A_voltage;
+
+        if (voltage > maximumVoltage)
+            maximumVoltage = voltage;
+        if (voltage < minimumVoltage)
+            minimumVoltage = voltage;
+    }
+    double vpp = maximumVoltage - minimumVoltage;
+    return vpp;
+}
+double getVPP_B( struct waveformsample *power_data , int rows  ) {
+    double maximumVoltage = power_data->phase_B_voltage;
+    double minimumVoltage = power_data->phase_B_voltage;
+
+    for (int i = 1; i < rows; i++) {
+        double voltage = (power_data + i)->phase_B_voltage;
+
+        if (voltage > maximumVoltage)
+            maximumVoltage = voltage;
+        if (voltage < minimumVoltage)
+            minimumVoltage = voltage;
+    }
+    double vpp = maximumVoltage - minimumVoltage;
+    return vpp;
+}
+double getVPP_C( struct waveformsample *power_data , int rows  ) {
+    double maximumVoltage = power_data->phase_C_voltage;
+    double minimumVoltage = power_data->phase_C_voltage;
+
+    for (int i = 1; i < rows; i++) {
+        double voltage = (power_data + i)->phase_C_voltage;
+
+        if (voltage > maximumVoltage)
+            maximumVoltage = voltage;
+        if (voltage < minimumVoltage)
+            minimumVoltage = voltage;
+    }
+    double vpp = maximumVoltage - minimumVoltage;
+    return vpp;
+}
