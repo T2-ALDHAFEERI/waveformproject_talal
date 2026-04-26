@@ -24,4 +24,13 @@ double getRmsC ( struct waveformsample *power_data , int rows  );
 double getVPP_A( struct waveformsample *power_data , int rows  );
 double getVPP_B( struct waveformsample *power_data , int rows  );
 double getVPP_C( struct waveformsample *power_data , int rows  );
+
+double getDC_Offset_phaseA( struct waveformsample *power_data , int rows  );
+double getDC_Offset_phaseB( struct waveformsample *power_data , int rows  );
+double getDC_Offset_phaseC( struct waveformsample *power_data , int rows  );
+
+int getClipping_number_phaseA( struct waveformsample *power_data , int rows  );
+int getClipping_number_phaseB( struct waveformsample *power_data , int rows  );
+int getClipping_number_phaseC( struct waveformsample *power_data , int rows  );
+
 #endif //TALALPOWERWAVE_PROJECT_WAVEFORM_H

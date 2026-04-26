@@ -59,3 +59,7 @@ struct waveformsample * readData (char *file_name , int *rows)
     return power_data;
 
 }
+void write_results(char *file_name , int rows  )
+{
+    // start writing on file
+}

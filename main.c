@@ -24,6 +24,18 @@ int main() {
     printf("VPP for phase A is %lf \n VPP for phase B is %lf \n VPP for phase C is %lf \n" ,
            vpp_A , vpp_B ,vpp_C);
 
+    double offset_A= getDC_Offset_phaseA(power_data,rows_count);
+    double offset_B= getDC_Offset_phaseB(power_data,rows_count);
+    double offset_C= getDC_Offset_phaseC(power_data,rows_count);
+    printf("Dc offset for phase A is %lf \n Dc offset for phase B is %lf \n Dc offset for phase C is %lf \n" ,
+           offset_A , offset_B ,offset_C);
+
+    int Clipping_number_phaseA=getClipping_number_phaseA(power_data,rows_count);
+    int Clipping_number_phaseB=getClipping_number_phaseB(power_data,rows_count);
+    int Clipping_number_phaseC=getClipping_number_phaseC(power_data,rows_count);
+
+    printf("Clipping for phase A is %d \n Clipping for phase B is %d \n Clipping for phase C is %d \n" ,
+           Clipping_number_phaseA , Clipping_number_phaseB ,Clipping_number_phaseC);
     return 0;
 
 

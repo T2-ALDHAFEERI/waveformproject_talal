@@ -67,6 +67,12 @@ build CMakeFiles/talalpowerwave_project.dir/waveform.c.obj: C_COMPILER__talalpow
   OBJECT_DIR = CMakeFiles\talalpowerwave_project.dir
   OBJECT_FILE_DIR = CMakeFiles\talalpowerwave_project.dir
 
+build CMakeFiles/talalpowerwave_project.dir/test.c.obj: C_COMPILER__talalpowerwave_project_Debug C$:/Users/alfuh/CLionProjects/talalpowerwave_project/test.c || cmake_object_order_depends_target_talalpowerwave_project
+  DEP_FILE = CMakeFiles\talalpowerwave_project.dir\test.c.obj.d
+  FLAGS = -g -std=gnu99
+  OBJECT_DIR = CMakeFiles\talalpowerwave_project.dir
+  OBJECT_FILE_DIR = CMakeFiles\talalpowerwave_project.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target talalpowerwave_project
@@ -75,7 +81,7 @@ build CMakeFiles/talalpowerwave_project.dir/waveform.c.obj: C_COMPILER__talalpow
 #############################################
 # Link the executable talalpowerwave_project.exe
 
-build talalpowerwave_project.exe: C_EXECUTABLE_LINKER__talalpowerwave_project_Debug CMakeFiles/talalpowerwave_project.dir/main.c.obj CMakeFiles/talalpowerwave_project.dir/io.c.obj CMakeFiles/talalpowerwave_project.dir/waveform.c.obj
+build talalpowerwave_project.exe: C_EXECUTABLE_LINKER__talalpowerwave_project_Debug CMakeFiles/talalpowerwave_project.dir/main.c.obj CMakeFiles/talalpowerwave_project.dir/io.c.obj CMakeFiles/talalpowerwave_project.dir/waveform.c.obj CMakeFiles/talalpowerwave_project.dir/test.c.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\talalpowerwave_project.dir
