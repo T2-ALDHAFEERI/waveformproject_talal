@@ -59,7 +59,50 @@ struct waveformsample * readData (char *file_name , int *rows)
     return power_data;
 
 }
-void write_results(char *file_name , int rows  )
+void write_result_file (char * filename , struct waveformsample *power_data , int rows_count  )
 {
-    // start writing on file
+    FILE * result_file = fopen (filename,"w");
+
+    double Rms_phaseA= getRmsA(power_data , rows_count);
+    double Rms_phaseB= getRmsB(power_data , rows_count);
+    double Rms_phaseC= getRmsC(power_data , rows_count);
+    fprintf(result_file,"Rms for phase A is %lf \n Rms for phase B is %lf \n Rms for phase C is %lf \n" ,
+           Rms_phaseA , Rms_phaseB ,Rms_phaseC);
+
+
+    double vpp_A= getVPP_A(power_data,rows_count);
+    double vpp_B= getVPP_B(power_data,rows_count);
+    double vpp_C= getVPP_C(power_data,rows_count);
+    fprintf(result_file,"VPP for phase A is %lf \n VPP for phase B is %lf \n VPP for phase C is %lf \n" ,
+           vpp_A , vpp_B ,vpp_C);
+
+    double offset_A= getDC_Offset_phaseA(power_data,rows_count);
+    double offset_B= getDC_Offset_phaseB(power_data,rows_count);
+    double offset_C= getDC_Offset_phaseC(power_data,rows_count);
+    fprintf(result_file,"Dc offset for phase A is %lf \n Dc offset for phase B is %lf \n Dc offset for phase C is %lf \n" ,
+           offset_A , offset_B ,offset_C);
+
+    int Clipping_number_phaseA=getClipping_number_phaseA(power_data,rows_count);
+    int Clipping_number_phaseB=getClipping_number_phaseB(power_data,rows_count);
+    int Clipping_number_phaseC=getClipping_number_phaseC(power_data,rows_count);
+
+    fprintf(result_file,"Clipping for phase A is %d \n Clipping for phase B is %d \n Clipping for phase C is %d \n" ,
+           Clipping_number_phaseA , Clipping_number_phaseB ,Clipping_number_phaseC);
+    printf("written successfully");
+
+    if(Rms_phaseA >= 209 && Rms_phaseA <=253)
+        fprintf(result_file,"Phase A is within 10 percent tolerance \n");
+    else
+        fprintf(result_file,"Phase A is NOT within 10 percent tolerance \n");
+
+    if(Rms_phaseB >= 209 && Rms_phaseB <=253)
+        fprintf(result_file,"Phase B is within 10 percent tolerance \n");
+    else
+        fprintf(result_file,"Phase B is NOT within 10 percent tolerance \n");
+
+    if(Rms_phaseC >= 209 && Rms_phaseC <=253)
+        fprintf(result_file,"Phase C is within 10 percent tolerance \n");
+    else
+        fprintf(result_file,"Phase C is NOT within 10 percent tolerance \n");
+    fclose(result_file);
 }

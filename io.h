@@ -7,6 +7,6 @@
 
 struct waveformsample * readData (char *file_name , int * rows); //header
 
-void write_results(char *file_name , int rows  );
+void write_result_file (char * filename , struct waveformsample *power_data , int rows  );
 
 #endif //TALALPOWERWAVE_PROJECT_IO_H
