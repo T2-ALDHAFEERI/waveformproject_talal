@@ -10,6 +10,12 @@
 struct waveformsample * readData (char *file_name , int *rows)
 {
     FILE * power_data_file = fopen (file_name , "r"); // open fine in read mode
+    if(power_data_file==NULL)
+    {
+        printf("Error : check the file \n");
+        *rows=0;
+        return NULL;
+    }
 
 
     char row_size[200] ; //maximum number of character in each row
@@ -90,17 +96,17 @@ void write_result_file (char * filename , struct waveformsample *power_data , in
            Clipping_number_phaseA , Clipping_number_phaseB ,Clipping_number_phaseC);
     printf("written successfully");
 
-    if(Rms_phaseA >= 209 && Rms_phaseA <=253)
+    if(Rms_phaseA >= 207 && Rms_phaseA <=253)
         fprintf(result_file,"Phase A is within 10 percent tolerance \n");
     else
         fprintf(result_file,"Phase A is NOT within 10 percent tolerance \n");
 
-    if(Rms_phaseB >= 209 && Rms_phaseB <=253)
+    if(Rms_phaseB >= 207 && Rms_phaseB <=253)
         fprintf(result_file,"Phase B is within 10 percent tolerance \n");
     else
         fprintf(result_file,"Phase B is NOT within 10 percent tolerance \n");
 
-    if(Rms_phaseC >= 209 && Rms_phaseC <=253)
+    if(Rms_phaseC >= 207 && Rms_phaseC <=253)
         fprintf(result_file,"Phase C is within 10 percent tolerance \n");
     else
         fprintf(result_file,"Phase C is NOT within 10 percent tolerance \n");

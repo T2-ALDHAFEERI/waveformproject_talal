@@ -10,6 +10,7 @@ int main(int arguments , char * arg[]) {
     if(power_data == NULL)
     {
         printf("error reading the data");
+        return 0;
     }
 
     write_result_file("result.txt",power_data,rows_count);
